@@ -1,0 +1,15 @@
+.limitTextHeight {
+  height: 50px;
+  overflow: hidden;
+}
+
+.posts-list{
+  display: flex;
+  justify-content: space-between;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}

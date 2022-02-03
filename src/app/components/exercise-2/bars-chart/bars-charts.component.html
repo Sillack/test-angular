@@ -1,0 +1,9 @@
+<div class="d-flex justify-content-end">
+    <button mat-raised-button color="primary" routerLink="/exercises">
+        exercices
+    </button>
+</div>
+<select  [(ngModel)]="region">
+    <option *ngFor="let region of dataRegions" [value]="region">{{region}}</option>
+</select>
+<echarts [initOpts]="initOpts" [options]="options"></echarts>

@@ -1,0 +1,6 @@
+<p class="text-justify">
+  {{ content }}
+  <a class="btn btn-link p-0"  *ngIf="!isContentToggled" (click)="toggleContent()" >...Read more</a>
+  <a class="btn btn-link p-0" *ngIf="isContentToggled" (click)="toggleContent()" >...Read less</a>
+</p>
+

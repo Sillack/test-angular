@@ -1,0 +1,10 @@
+
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~bootstrap/scss/mixins";
+@import "assets/scss/variables.bootstrap";
+@import 'assets/scss/card';
+@import "~@fortawesome/fontawesome-free/css/all.min.css";
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

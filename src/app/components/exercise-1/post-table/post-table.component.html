@@ -1,0 +1,66 @@
+<div class="d-flex justify-content-between">
+  <button mat-raised-button color="primary" routerLink="/exercises/exercise-1/graph">
+    graphique postes
+  </button>
+  <button mat-raised-button color="primary" routerLink="/exercises">
+    exercices
+  </button>
+</div>
+<div class="py-2 px-3">
+  <div class="card card-custom card-stretch gutter-b "  style="background-color: #f3f6f9	; border-radius: 30px;">
+    <div class="card-header border-0 pt-6 mb-2">
+      <h3 class="card-title align-items-start flex-column">
+        <span class="card-label font-weight-bold font-size-h4 text-dark-75 mb-3">Posts</span>
+      </h3>
+      <div class="card-toolbar">
+        <div class="quick-search quick-search-dropdown" id="kt_quick_search_dropdown">
+          <form method="get" class="quick-search-form">
+            <div class="input-group ">
+              <input type="text" class="form-control" style="border-radius: 20px" placeholder="Search">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="card-body p-1">
+      <perfect-scrollbar style="height: 30em">
+      <div class="table-responsive">
+        <table class="table table-borderless mb-0">
+          <tbody>
+          <tr *ngFor="let post of posts" class="d-flex justify-content-between">
+            <td class="w-40px align-middle pb-6 pl-0 pr-2" style="flex: 0 1 5%;">
+              <div class="mr-4 flex-shrink-0 text-center" style="width: 40px;">
+                <i class="fab fa-instagram" style="font-size: 30px; color: #4169E1"></i>
+              </div>
+            </td>
+            <td class="font-size-lg font-weight-bolder align-middle w-10px pb-6" style="flex: 0 1 55%;">
+              <app-read-more
+                [content]="post.post_text"
+                [limit]="50"
+              >
+              </app-read-more>
+            </td>
+            <td class="font-weight-bold text-muted text-right align-middle pb-6" style="flex: 0 1 25%;">
+              {{post.post_comments.length}} Comments
+            </td>
+            <td class="font-weight-bolder font-size-lg text-dark-75 text-right align-middle pb-6" style="flex: 0 1 25%;">
+              {{post.post_date.includes('at') && !post.post_date.includes('Yesterday') ? (post.post_date.replace('at','') | date) : post.post_date}}
+            </td>
+            <td class="w-40px align-middle pb-6 pl-0 pr-2" style="flex: 0 1 15%;">
+              <div class="flex-shrink-0 text-center">
+                   <span class="fa-stack fa-md">
+                <i class="fa fa-circle fa-stack-2x" style="color: #E74C3C"></i>
+                <i class="fa fa-thumbs-down fa-stack-1x fa-inverse"></i>
+              </span>
+              </div>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      </perfect-scrollbar>
+    </div>
+  </div>
+</div>
+
+
